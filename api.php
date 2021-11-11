@@ -51,7 +51,7 @@
             "url" => 'ws/EAC/protocolo/',
             "metodo" => 'POST',
             "header" => 'token',
-            "params" => ["telefone" => ""],
+            "params" => ["telefone" => "47992869383"],
             "resposta" => "protocolo",
             "status" => 'Código de status: 201 Created'
         ],
@@ -102,6 +102,6 @@
     );
     
     echo "<pre>";
-    $get = requisitarApi($params['login']);
+    $get = requisitarApi($params['getProtocolo']);
     var_dump($get);
 
