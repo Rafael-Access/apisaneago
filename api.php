@@ -24,7 +24,7 @@
             $body = json_encode($params['params']);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
             curl_setopt($ch, CURLOPT_URL, $url.$params['url']);
-            var_dump(array($body, $url.$params['url'], $header));
+            var_dump(array('body'=>$body, 'url'=>$url.$params['url'], 'header'=>$header));
         }
         if($params['metodo']=='GET'){
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
