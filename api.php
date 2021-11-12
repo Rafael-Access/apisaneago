@@ -45,7 +45,10 @@
             print_r('Curl error: ' . curl_error($ch));
         }
         curl_close($ch);
-        return "<h5>Retorno :". json_decode($retorno) ."</h5>";
+        $result = "<h5>Retorno :";
+        $result .= json_decode($retorno) ;
+        $result .="</h5>";
+        return $result ; 
     }
    
     // gera token
