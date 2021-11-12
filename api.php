@@ -35,6 +35,7 @@
         curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file_path);
 
         $retorno = curl_exec($ch);
+        var_dump(curl_error($ch));
         return json_decode($retorno);
     }
    
