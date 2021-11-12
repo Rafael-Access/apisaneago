@@ -109,6 +109,7 @@
     );
     
     echo "<pre>";
-    $get = requisitarApi($params['getProtocolo']);
+    $get = requisitarApi($params['login']);
+    // $get = requisitarApi($params['getProtocolo']);
     var_dump($get);
     
