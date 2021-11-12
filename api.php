@@ -107,7 +107,7 @@
             "status" => 'Código de status: 200 Ok'
         ]
     );
-    
+    echo "<h2>Retorno : </h2>";
     echo "<pre>";
     $get = requisitarApi($params['login']);
     // $get = requisitarApi($params['getProtocolo']);
