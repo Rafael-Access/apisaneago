@@ -44,11 +44,8 @@
             // throw new Exception('Curl error: ' . curl_error($crl));
             print_r('Curl error: ' . curl_error($ch));
         }
-        curl_close($ch);
-        $result = "<h5>Retorno :";
-        $result .= json_decode($retorno) ;
-        $result .="</h5>";
-        return $result ; 
+        curl_close($ch);       
+        return json_decode($retorno);
     }
    
     // gera token
