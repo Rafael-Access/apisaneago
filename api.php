@@ -62,7 +62,7 @@
             "status" => ''
         ],
         'getProtocolo' => [
-            "url" => 'ws/EAC/protocolo',
+            "url" => 'ws/eac/protocolo',
             "metodo" => 'POST',
             "header" => 'token',
             "params" => ["telefone" => "47992869383"],
