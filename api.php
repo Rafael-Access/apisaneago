@@ -8,7 +8,7 @@
         // $url = '172.16.1.171/prt/';
         $token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjaGF2ZXNEZUFjZXNzbyI6WyJCQVBTMDAxfENBSUUiLCJFQUNTMDAxfENBSUUiLCJFQUNTMDAyfENBSUUiLCJFQ09TMDAxfENBSUUiLCJFQ09TMDAyfENBSUUiLCJFQ09TMDAzfENBSUUiLCJFQ09TMDA0fENBSUUiLCJFQ09TMDA1fENBSUUiLCJFQ09TMDA2fENBSUUiLCJFQ09TMDA3fENBSUUiLCJFQ09TMDA4fENBSUUiLCJFQ09TMDA5fENBSUUiLCJFQ09TMDEwfENBSUUiLCJFQ09TMDExfENBSUUiLCJFQ09TMDEyfENBSUUiLCJFQ09TMDEzfENBSUUiLCJFQ09TMDE0fENBSUUiLCJFQ09TMDE1fENBSUUiLCJFQ09TMDE2fENBSUUiLCJFQ09TMDE3fENBSUUiLCJFQ09TMDE4fENBSUUiLCJFQ09TMDE5fENBSUUiLCJFQ09TMDIwfENBSUUiLCJFQ09TMDIxfEMqKioiLCJFR1dTMDAxfENBSUUiLCJHUE1TMDAxfENBSUUiLCJNUFNTMDAxfENBSUUiLCJNUFNTMDAyfENBSUUiLCJNUFNTMDAzfENBSUUiLCJNUFNTMDA0fENBSUUiLCJNU1NTMDAxfENBSUUiLCJNU1NTMDAyfENBSUUiLCJPU0xTMDAxfENBSUUiXSwiZXhwIjoxNjM2NzM2OTk3LCJ1c2VybmFtZSI6Ik1TSTAwMTEifQ.W1g6yYpnjKSRHhrbt2Jg_OWMR6CCgIn7bp_UKMZS1ac";
         $header = array();
-        $header[] = 'Authorization: '.$token;
+        $header[] = 'token: '.$token;
         $header[] = 'Content-type: application/json';
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);      
@@ -22,7 +22,7 @@
             $body = json_encode($params['params']);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
             curl_setopt($ch, CURLOPT_URL, $url.$params['url']);
-            var_dump($body);
+            var_dump(array($body, $url.$params['url']));
         }
         if($params['metodo']=='GET'){
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
