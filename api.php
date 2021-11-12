@@ -36,7 +36,7 @@
         $retorno = curl_exec($ch);
         return json_decode($retorno);
     }
-
+   
     // gera token
     $params = array(
         'login' => [
@@ -48,7 +48,7 @@
             "status" => ''
         ],
         'getProtocolo' => [
-            "url" => 'ws/EAC/protocolo/',
+            "url" => 'ws/EAC/protocolo',
             "metodo" => 'POST',
             "header" => 'token',
             "params" => ["telefone" => "47992869383"],
