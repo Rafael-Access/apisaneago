@@ -3,8 +3,8 @@
         $dir = $_SERVER['DOCUMENT_ROOT']."/ctemp";
         $path = tempnam(sys_get_temp_dir(), 'MyTempCookie');
         $cookie_file_path = $path."/cookie.txt";
-        $urlprod = 'http://prod.saneago.com.br/prt/';
-        $url = 'http://homolog.saneago.com.br/prt/';
+        $url = 'http://prod.saneago.com.br/prt/';
+        // $url = 'http://homolog.saneago.com.br/prt/';
         // $url = '172.16.1.171/prt/';
         $token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjaGF2ZXNEZUFjZXNzbyI6WyJCQVBTMDAxfENBSUUiLCJFQUNTMDAxfENBSUUiLCJFQUNTMDAyfENBSUUiLCJFQ09TMDAxfENBSUUiLCJFQ09TMDAyfENBSUUiLCJFQ09TMDAzfENBSUUiLCJFQ09TMDA0fENBSUUiLCJFQ09TMDA1fENBSUUiLCJFQ09TMDA2fENBSUUiLCJFQ09TMDA3fENBSUUiLCJFQ09TMDA4fENBSUUiLCJFQ09TMDA5fENBSUUiLCJFQ09TMDEwfENBSUUiLCJFQ09TMDExfENBSUUiLCJFQ09TMDEyfENBSUUiLCJFQ09TMDEzfENBSUUiLCJFQ09TMDE0fENBSUUiLCJFQ09TMDE1fENBSUUiLCJFQ09TMDE2fENBSUUiLCJFQ09TMDE3fENBSUUiLCJFQ09TMDE4fENBSUUiLCJFQ09TMDE5fENBSUUiLCJFQ09TMDIwfENBSUUiLCJFQ09TMDIxfEMqKioiLCJFR1dTMDAxfENBSUUiLCJHUE1TMDAxfENBSUUiLCJNUFNTMDAxfENBSUUiLCJNUFNTMDAyfENBSUUiLCJNUFNTMDAzfENBSUUiLCJNUFNTMDA0fENBSUUiLCJNU1NTMDAxfENBSUUiLCJNU1NTMDAyfENBSUUiLCJPU0xTMDAxfENBSUUiXSwiZXhwIjoxNjM2ODI2NjkyLCJ1c2VybmFtZSI6Ik1TSTAwMTEifQ.n2jh6OWapbXRDfQ4hc4XH05NdmB6tdPqxlJaPHnkZJE";
         $header = array();
@@ -115,7 +115,7 @@
     );    
     echo "<pre>";
     
-    // $get = requisitarApi($params['login']);
-    $get = requisitarApi($params['getProtocolo']);
+    $get = requisitarApi($params['login']);
+    // $get = requisitarApi($params['getProtocolo']);
     var_dump($get);
   
