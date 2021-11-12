@@ -45,7 +45,7 @@
             print_r('Curl error: ' . curl_error($ch));
         }
         curl_close($ch);
-        return json_decode($retorno);
+        return "<h5>Retorno :". json_decode($retorno) ."</h5>";
     }
    
     // gera token
@@ -112,8 +112,8 @@
         ]
     );    
     echo "<pre>";
-    echo "<h5>Retorno :";
+    
     $get = requisitarApi($params['login']);
     // $get = requisitarApi($params['getProtocolo']);
     var_dump($get);
-    echo "</h5>";
+  
