@@ -13,8 +13,8 @@
        
         $header[] = 'token: '.(string)$token;
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);      
-        //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);      
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_TIMEOUT , 260 );
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
@@ -36,7 +36,6 @@
         curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file_path);
 
         $retorno = curl_exec($ch);
-        var_dump(curl_error($ch));
         return json_decode($retorno);
     }
    
