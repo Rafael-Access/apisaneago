@@ -62,7 +62,7 @@
             "url" => 'ws/EAC/protocolo',
             "metodo" => 'POST',
             "header" => 'token',
-            "params" => ["telefone" => "9"],
+            "params" => ["telefone" => "47992869383"],
             "resposta" => "protocolo",
             "status" => 'Código de status: 201 Created'
         ],
