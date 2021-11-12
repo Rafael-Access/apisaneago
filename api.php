@@ -35,7 +35,12 @@
         curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file_path);
 
         $retorno = curl_exec($ch);
-        var_dump(curl_error($ch));
+        if ($retorno === false)
+        {
+            // throw new Exception('Curl error: ' . curl_error($crl));
+            print_r('Curl error: ' . curl_error($ch));
+        }
+        curl_close($ch);
         return json_decode($retorno);
     }
    
