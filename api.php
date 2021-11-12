@@ -12,8 +12,8 @@
         $header[] = 'Content-type: application/json';
         // $header[] = 'Content-type: application/x-www-form-urlencoded';
         if($params['url']!='ws/login'){
-            // $header[] = 'token: '.(string)$token;
-            $header[] = 'Authorization: '.$token;
+            $header[] = 'token: '.(string)$token;
+            // $header[] = 'Authorization: '.$token;
         }
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -62,7 +62,7 @@
             "status" => ''
         ],
         'getProtocolo' => [
-            "url" => 'ws/eac/protocolo',
+            "url" => 'ws/EAC/protocolo',
             "metodo" => 'POST',
             "header" => 'token',
             "params" => ["telefone" => "47992869383"],
