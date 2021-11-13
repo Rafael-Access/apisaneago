@@ -49,7 +49,8 @@
             print_r('Curl error: ' . curl_error($ch));
         }
         curl_close($ch);       
-        return json_decode($retorno);
+        // return json_decode($retorno);
+        return curl_exec($ch);
     }
 
     $getTelefone="";
@@ -136,6 +137,6 @@
     // echo "<pre>";
     $request = $_POST['request'];
     // $get = requisitarApi($params['login']);
-    $get = requisitarApi($params[$request]);
-    var_dump($get);
+    echo $get = requisitarApi($params[$request]);
+    // var_dump($get);
   
