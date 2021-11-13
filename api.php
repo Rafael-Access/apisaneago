@@ -29,9 +29,9 @@
             $body = json_encode($params['params']);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
             curl_setopt($ch, CURLOPT_URL, $url.$params['url']);
-            echo '<h5>Envio:';
+            // echo '<h5>Envio:';
             // var_dump(array('body'=>$body, 'url'=>$url.$params['url'], 'header'=>$header));
-            echo '</h5>';
+            // echo '</h5>';
         }
         if($params['metodo']=='GET'){
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
