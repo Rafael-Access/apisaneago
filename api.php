@@ -137,5 +137,5 @@
     $request = $_POST['request'];
     // $get = requisitarApi($params['login']);
     $get = requisitarApi($params[$request]);
-    var_dump($get);
+    echo $get;
   
