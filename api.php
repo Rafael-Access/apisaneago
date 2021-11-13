@@ -30,7 +30,7 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
             curl_setopt($ch, CURLOPT_URL, $url.$params['url']);
             echo '<h5>Envio:';
-            var_dump(array('body'=>$body, 'url'=>$url.$params['url'], 'header'=>$header));
+            // var_dump(array('body'=>$body, 'url'=>$url.$params['url'], 'header'=>$header));
             echo '</h5>';
         }
         if($params['metodo']=='GET'){
@@ -136,6 +136,6 @@
     // echo "<pre>";
     $request = $_POST['request'];
     // $get = requisitarApi($params['login']);
-    echo $get = requisitarApi($params[$request]);
-    // var_dump($get);
+    $get = requisitarApi($params[$request]);
+    var_dump($get);
   
