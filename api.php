@@ -49,8 +49,7 @@
             print_r('Curl error: ' . curl_error($ch));
         }
         curl_close($ch);       
-        // return json_decode($retorno);
-        return curl_exec($ch);
+        return $retorno;
     }
 
     $getTelefone="";
