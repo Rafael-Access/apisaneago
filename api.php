@@ -50,14 +50,32 @@
         curl_close($ch);       
         return json_decode($retorno);
     }
-   
+
+    $getTelefone="";
+    $getUrl = '';
+    $getMatricula = '';
+    $getSenha = '';
+    if(isset($_POST['url'])){
+        $getUrl = $_POST['url'];
+    }
+    if(isset($_POST['matricula'])){
+        $getMatricula = $_POST['matricula'];
+    }
+    if(isset($_POST['senha'])){
+        $getSenha = $_POST['senha'];
+    }
+    if(isset($_POST['telefone'])){
+        $getTelefone = $_POST['telefone'];
+    }
+    
+
     // gera token
     $params = array(
         'login' => [
-            "url" => 'ws/login',
+            "url" => $getUrl,
             "metodo" => 'POST',
             "header" => '',
-            "params" => ["matricula" => "MSI0011", "senha" => "Ura#908173"],
+            "params" => ["matricula" => $getMatricula, "senha" => $getSenha],
             "resposta" => "token",
             "status" => ''
         ],
@@ -115,8 +133,8 @@
         ]
     );    
     echo "<pre>";
-    
+    $request = $_POST['request'];
     // $get = requisitarApi($params['login']);
-    $get = requisitarApi(serialize(array_values($_POST)));
+    $get = requisitarApi($params[$request]);
     var_dump($get);
   
