@@ -68,8 +68,13 @@
     if(isset($_POST['telefone'])){
         $getTelefone = $_POST['telefone'];
     }
+    if(isset($_POST['numConta'])){
+        $getNumConta = $_POST['numConta'];
+    }
+    if(isset($_POST['protocolo'])){
+        $getProtocolo = $_POST['protocolo'];
+    }
     
-
     // gera token
     $params = array(
         'login' => [
@@ -89,10 +94,10 @@
             "status" => 'Código de status: 201 Created'
         ],
         'checkFaltaAgua' => [
-            "url" => 'ws/GPM/conta/{numConta}/ConsultarFaltaDagua?protocolo={protocolo}',
+            "url" => 'ws/gpm/conta/{numConta}/ConsultarFaltaDagua?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
-            "params" => ["numConta" => "", "protocolo" => ""],
+            "params" => ["numConta" => $getNumConta, "protocolo" => $getProtocolo],
             "resposta" => [
                 "DataHoraProgramada" => 'timestamp',
                 'DataHoraNormalizacao' => 'timestamp'
@@ -103,7 +108,7 @@
             "url" => 'ws/ECO/conta/{numConta}/ConsultarDebitosAbertos?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
-            "params" => ["numConta" => "", "protocolo" => ""],
+            "params" => ["numConta" => $getNumConta, "protocolo" =>  $getProtocolo],
             "resposta" => [
                 "valorDebito" => 'decimal',
                 'qtdeFaturas' => 'numerico',
@@ -117,7 +122,7 @@
             "url" => 'ws/ECO/conta/{numConta}/ValidarSolicitacaoReligacao?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
-            "params" => ["numConta" => "", "protocolo" => ""],
+            "params" => ["numConta" => $getNumConta, "protocolo" => $getProtocolo],
             "resposta" => [
                 "valorReligacaoNormal" => 'decimal',
                 'valorReligacaoUrgente' => 'decimal'               
@@ -128,7 +133,7 @@
             "url" => 'ws/ECO/conta/{numConta}/SolicitarReligacao?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
-            "params" => ["numConta" => "", "protocolo" => ""],
+            "params" => ["numConta" => $getNumConta,  "protocolo" => $getProtocolo],
             "resposta" => 'A sua solicitação de religação foi registrada com sucesso.',
             "status" => 'Código de status: 200 Ok'
         ]
