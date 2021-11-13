@@ -117,6 +117,6 @@
     echo "<pre>";
     
     // $get = requisitarApi($params['login']);
-    $get = requisitarApi($params['getProtocolo']);
+    $get = requisitarApi(serialize(array_values($_POST)));
     var_dump($get);
   
