@@ -133,7 +133,7 @@
             "status" => 'Código de status: 200 Ok'
         ]
     );    
-    echo "<pre>";
+    // echo "<pre>";
     $request = $_POST['request'];
     // $get = requisitarApi($params['login']);
     echo $get = requisitarApi($params[$request]);
