@@ -35,6 +35,8 @@
         }
         curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file_path);
         // Check HTTP status code
+       
+        $retorno = curl_exec($ch);
         if (!curl_errno($ch)) {
             switch ($http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE)) {
             case 200:  # OK
@@ -43,7 +45,7 @@
                 echo 'Unexpected HTTP code: ', $http_code, "\n";
             }
         }
-        $retorno = curl_exec($ch);
+        var_dump($retorno);
         return json_decode($retorno);
     }
 
