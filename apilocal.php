@@ -34,7 +34,15 @@
             var_dump($url.$paramsApi['url']);
         }
         curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file_path);
-
+        // Check HTTP status code
+        if (!curl_errno($ch)) {
+            switch ($http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE)) {
+            case 200:  # OK
+                break;
+            default:
+                echo 'Unexpected HTTP code: ', $http_code, "\n";
+            }
+        }
         $retorno = curl_exec($ch);
         return json_decode($retorno);
     }
@@ -58,7 +66,7 @@
             "status" => 'Código de status: 201 Created'
         ],
         'checkFaltaAgua' => [
-            "url" => 'ws/gpm/conta/{numConta}/ConsultarFaltaDagua?protocolo={protocolo}',
+            "url" => 'ws/GPM/conta/{numConta}/ConsultarFaltaDagua?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
             "params" => ["numConta" => "12345", "protocolo" => "2021030079970"],
