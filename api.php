@@ -94,7 +94,7 @@
             "status" => 'Código de status: 201 Created'
         ],
         'checkFaltaAgua' => [
-            "url" => 'ws/gpm/conta/{numConta}/ConsultarFaltaDagua?protocolo={protocolo}',
+            "url" => 'ws/GPM/conta/{numConta}/ConsultarFaltaDagua?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
             "params" => ["numConta" => $getNumConta, "protocolo" => $getProtocolo],
