@@ -31,7 +31,6 @@
                 $paramsApi['url'] = str_replace('{'.$k.'}', $v, $paramsApi['url']);
             }
             curl_setopt($ch, CURLOPT_URL, $url.$paramsApi['url']);
-            var_dump($url.$paramsApi['url']);
         }
         curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file_path);
         // Check HTTP status code
@@ -45,7 +44,6 @@
                 echo 'Unexpected HTTP code: ', $http_code, "\n";
             }
         }
-        var_dump($retorno);
         return json_decode($retorno);
     }
 

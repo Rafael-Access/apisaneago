@@ -43,12 +43,29 @@
         curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file_path);
 
         $retorno = curl_exec($ch);
-        if ($retorno === false)
-        {
-            // throw new Exception('Curl error: ' . curl_error($crl));
-            print_r('Curl error: ' . curl_error($ch));
+        if (!curl_errno($ch)) {
+            switch ($http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE)) {
+            case 200:  # OK
+                curl_close($ch);
+                return $retorno;
+            case 201:  # OK
+                curl_close($ch);
+                return $retorno;
+            case 404:
+                curl_close($ch);
+                return json_encode(array('status'=> $http_code));
+            case 417:
+                curl_close($ch);
+                return json_encode(array('status'=> $http_code));
+            case 500:
+                curl_close($ch);
+                return json_encode(array('status'=> $http_code));
+            default:
+                curl_close($ch);
+                return 'Unexpected HTTP code: '. $http_code;
+            }
         }
-        curl_close($ch);       
+        curl_close($ch);
         return $retorno;
     }
 
