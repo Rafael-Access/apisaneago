@@ -30,6 +30,9 @@
             foreach($paramsApi['params'] as $k => $v){
                 $paramsApi['url'] = str_replace('{'.$k.'}', $v, $paramsApi['url']);
             }
+            var_dump($token);
+            echo "<br>";
+            var_dump($url.$paramsApi['url']);
             curl_setopt($ch, CURLOPT_URL, $url.$paramsApi['url']);
         }
         curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file_path);
