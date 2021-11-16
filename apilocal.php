@@ -61,7 +61,7 @@
             "status" => ''
         ],
         'getProtocolo' => [
-            "url" => 'ws/EAC/protocolo/',
+            "url" => 'ws/eac/protocolo/',
             "metodo" => 'POST',
             "header" => 'token',
             "params" => ["telefone" => ""],
@@ -69,7 +69,7 @@
             "status" => 'Código de status: 201 Created'
         ],
         'checkFaltaAgua' => [
-            "url" => 'ws/GPM/conta/{numConta}/ConsultarFaltaDagua?protocolo={protocolo}',
+            "url" => 'ws/gpm/conta/{numConta}/ConsultarFaltaDagua?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
             "params" => ["numConta" => "2442850", "protocolo" => "2021030079970"],
@@ -80,7 +80,7 @@
             "status" => 'Código de status: 200 Ok'
         ],
         'checkDebitos' => [
-            "url" => 'ws/ECO/conta/{numConta}/ConsultarDebitosAbertos?protocolo={protocolo}',
+            "url" => 'ws/eco/conta/{numConta}/ConsultarDebitosAbertos?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
             "params" => ["numConta" => "", "protocolo" => ""],
@@ -94,7 +94,7 @@
             "status" => 'Código de status: 200 Ok'
         ],
         'checkReligacao' => [
-            "url" => 'ws/ECO/conta/{numConta}/ValidarSolicitacaoReligacao?protocolo={protocolo}',
+            "url" => 'ws/eco/conta/{numConta}/ValidarSolicitacaoReligacao?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
             "params" => ["numConta" => "", "protocolo" => ""],
@@ -105,7 +105,7 @@
             "status" => 'Código de status: 200 Ok'
         ],
         'solicitaReligacao' => [
-            "url" => 'ws/ECO/conta/{numConta}/SolicitarReligacao?protocolo={protocolo}',
+            "url" => 'ws/eco/conta/{numConta}/SolicitarReligacao?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
             "params" => ["numConta" => "", "protocolo" => ""],
