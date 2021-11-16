@@ -153,6 +153,14 @@
             "params" => ["numConta" => $getNumConta,  "protocolo" => $getProtocolo],
             "resposta" => 'A sua solicitação de religação foi registrada com sucesso.',
             "status" => 'Código de status: 200 Ok'
+        ],
+        'checkDebitosComTitularidade' => [
+            "url" => '{URLMiddleware}/saneago/consultadebitoabertocomtitularidade',
+            "metodo" => 'POST',
+            "header" => 'token',
+            "params" => ["numConta" => $getNumConta,  "protocolo" => $getProtocolo, "CpfCnpj" => $CpfCnpj],
+            "resposta" => 'A sua solicitação de religação foi registrada com sucesso.',
+            "status" => 'Código de status: 200 Ok'
         ]
     );    
     // echo "<pre>";

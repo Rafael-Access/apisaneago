@@ -69,7 +69,7 @@
             "url" => 'ws/GPM/conta/{numConta}/ConsultarFaltaDagua?protocolo={protocolo}',
             "metodo" => 'GET',
             "header" => 'token',
-            "params" => ["numConta" => "12345", "protocolo" => "2021030079970"],
+            "params" => ["numConta" => "2442299", "protocolo" => "2021030079970"],
             "resposta" => [
                 "DataHoraProgramada" => 'timestamp',
                 'DataHoraNormalizacao' => 'timestamp'
