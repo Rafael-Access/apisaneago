@@ -115,5 +115,5 @@
     );
     
     echo "<pre>";
-    $get = requisitarApi($paramsApi['checkFaltaAgua']);
+    $get = requisitarApi($paramsApi['login']);
     var_dump($get);
